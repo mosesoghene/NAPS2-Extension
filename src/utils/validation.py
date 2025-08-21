@@ -763,7 +763,7 @@ class ValidationEngine:
         }
 
     def get_validation_summary(self, errors: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Generate validation summary from error list."""
+        """Generate validation summary from an error list."""
         summary = {
             'total_errors': len(errors),
             'error_types': {},

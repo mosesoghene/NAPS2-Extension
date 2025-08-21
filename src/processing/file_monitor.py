@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Set, List, Optional, Dict
 from datetime import datetime, timedelta
 
-from PySide6.QtCore import QObject, QFileSystemWatcher, QTimer, pyqtSignal
+from PySide6.QtCore import QObject, QFileSystemWatcher, QTimer, Signal
 from PySide6.QtCore import QThread, QMutex, QMutexLocker
 
 from ..core.exceptions import FileProcessingError
@@ -22,12 +22,12 @@ class FileMonitor(QObject):
     """Monitors NAPS2 staging directory for new scanned files."""
 
     # Signals
-    file_detected = pyqtSignal(object)  # Path
-    batch_ready = pyqtSignal(list)  # List[Path]
-    monitoring_started = pyqtSignal(object)  # Path
-    monitoring_stopped = pyqtSignal()
-    file_size_stabilized = pyqtSignal(object)  # Path
-    monitoring_error = pyqtSignal(str)  # error_message
+    file_detected = Signal(object)  # Path
+    batch_ready = Signal(list)  # List[Path]
+    monitoring_started = Signal(object)  # Path
+    monitoring_stopped = Signal()
+    file_size_stabilized = Signal(object)  # Path
+    monitoring_error = Signal(str)  # error_message
 
     def __init__(self, parent=None):
         """

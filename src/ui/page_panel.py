@@ -21,7 +21,7 @@ from PySide6.QtCore import (
 )
 from PySide6.QtGui import (
     QPainter, QPen, QBrush, QColor, QPixmap, QMouseEvent, QPaintEvent,
-    QResizeEvent, QContextMenuEvent, QDragEnterEvent, QDropEvent
+    QResizeEvent, QContextMenuEvent, QDragEnterEvent, QDropEvent, QAction
 )
 
 from src.models.batch import DocumentBatch

@@ -9,7 +9,7 @@ import logging
 from typing import Set, List, Optional, Tuple
 from enum import Enum
 
-from PySide6.QtCore import QObject, pyqtSignal, Qt
+from PySide6.QtCore import QObject, Signal, Qt
 from PySide6.QtGui import QKeySequence
 
 from ..models.enums import SelectionMode
@@ -20,9 +20,9 @@ class PageSelectionManager(QObject):
     """Manages complex page selection operations."""
 
     # Signals
-    selection_changed = pyqtSignal(list)  # List[str] - page IDs
-    selection_cleared = pyqtSignal()
-    selection_range_changed = pyqtSignal(str, str)  # start_page_id, end_page_id
+    selection_changed = Signal(list)  # List[str] - page IDs
+    selection_cleared = Signal()
+    selection_range_changed = Signal(str, str)  # start_page_id, end_page_id
 
     def __init__(self, parent=None):
         """Initialize selection manager."""

@@ -28,6 +28,7 @@ class ApplicationSignals(QObject):
     schema_loaded = Signal(object)  # IndexSchema
     schema_saved = Signal(str)  # schema_name
     schema_deleted = Signal(str)  # schema_name
+    schema_list_updated = Signal()  # Schema list has been refreshed
 
     # Page selection signals
     pages_selected = Signal(list)  # List[PageReference]
@@ -52,6 +53,7 @@ class ApplicationSignals(QObject):
     processing_completed = Signal(dict)  # results
     processing_error = Signal(str)  # error_message
     processing_cancelled = Signal()
+    progress_update = Signal(int, str)  # progress_percent, message
 
     # Export signals
     export_requested = Signal(object, object)  # DocumentBatch, output_path

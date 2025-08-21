@@ -305,8 +305,8 @@ def setup_application_style(app: QApplication) -> None:
         app.setFont(font)
 
         # Enable high DPI support
-        app.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling, True)
-        app.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
+        app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+        app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
 
         # Set window icon if available
         icon_path = Path(__file__).parent / "resources" / "icons" / "app_icon.png"
